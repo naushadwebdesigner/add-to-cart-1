@@ -1,0 +1,22 @@
+
+
+
+<div class="row" style="max-width: 96%; padding-top:100px; margin: auto;" >
+@for (item of data; track $index) {    
+        <div class="col-sm">
+            <div class="card" style="width: 20rem;">                
+                <img [src]="item.image" class="card-img-top" [alt]="item.category">
+                <div class="card-body">
+                  <h5 class="card-title"> {{item.title}} </h5>
+                  <span class="badge badge-pill badge-success">  {{ item.price | currency: 'INR' }} </span>
+                  <p class="card-text">
+                    {{ item.description }}
+                    
+                  </p>
+                  <button class="btn btn-primary" (click)="addToCart(item)">Add to Cart</button>
+                </div>
+              </div>
+        </div>
+}
+</div>
+

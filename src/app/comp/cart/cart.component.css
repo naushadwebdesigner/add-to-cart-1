@@ -1,0 +1,7 @@
+.cartTable td, .cartTable th {
+    padding: 5px;
+}
+
+.cartTable img {
+    max-height: 100px;
+}

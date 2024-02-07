@@ -1,0 +1,21 @@
+.card {
+    padding: 25px;
+    margin-bottom: 10%;
+}
+.card img {
+    max-height: 150px;
+    object-fit: contain;
+}
+
+h5.card-title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+p.card-text {
+    height: 150px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-top: 5px;
+}
