@@ -21,7 +21,7 @@ export class HomeComponent {
   getData() {
     this.http.get<any[]>("https://fakestoreapi.com/products")
       .subscribe(res => {
-        this.products = res.map(product => ({ ...product, quantity: 1, bookvalue:5 }));
+        this.products = res.map(product => ({ ...product, quantity: 1 }));
       });
   }
 
