@@ -1,0 +1,33 @@
+<div class="product_wrapper">
+    <div class="container">
+
+        @for (item of products; track $index) {
+
+            <div class="producBox">
+                <div class="imagebox">
+            <img [src]="item.image" alt="" alt="">
+                </div>
+                <h2> {{ item.title }} </h2>
+                <h3> {{ item.price | currency }} </h3>
+    
+                <div class="count_box">
+
+                    <div class="minus" (click)="decrementQuantity(item)"><i class="fa fa-minus" aria-hidden="true"></i></div>                    
+                    <div class="qnt"> {{ item.quantity }} </div>                    
+                    <div class="plus" (click)="incrementQuantity(item)"><i class="fa fa-plus" aria-hidden="true"></i></div>
+
+                </div>
+    
+                <div class="cta">
+                    <button (click)="addToCart(item)">Add to Cart</button>
+                </div>    
+            </div>
+        }
+
+        
+
+        
+
+
+    </div>
+</div>

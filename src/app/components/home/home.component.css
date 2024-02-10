@@ -1,0 +1,94 @@
+.product_wrapper .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding-top: 50px;
+    text-align: center;
+}
+.producBox {
+    width: 24%;
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-bottom: 5px solid #ddd;
+    margin-bottom: 30px;
+}
+
+.producBox .imagebox  {
+    text-align: center;
+    background-color: #f8f8f8;
+   
+}
+
+.producBox img {
+    height: 200px;
+    width:200px;
+    object-fit: contain;
+    display: block;
+    margin: auto;
+}
+
+h2 {
+    font-size: 1.5rem;
+    padding-top: 10px;
+    margin: 0;
+    color: rgb(9, 72, 167);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-top: 25px;
+}
+h3 {
+    font-size: 1.3rem;
+    padding-top: 15px;
+    color: rgb(5, 154, 70);
+    font-weight: bold;
+}
+
+.count_box{
+    display: flex;
+    padding: 10px 0 25px;
+    align-items: center;
+    overflow: hidden;
+    justify-content: center;
+}
+
+.plus, .minus {
+    width: 35px;
+    height: 35px;
+    background-color: blanchedalmond;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.plus:hover, .minus:hover {
+    background-color: blueviolet;
+    color: #fff;
+}
+
+.qnt {
+    padding: 0 15px;
+    font-weight: bold;
+}
+
+.cta button {
+    background-color: rgb(87, 11, 192);
+    color: #fff;
+    border-radius: 30px;
+    height: 40px;
+    padding-left: 15px;
+    padding-right: 15px;
+    border: 0;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    outline: 0;
+    margin-bottom: 30px;
+}
+
+.cta button:hover {
+    background-color: chocolate;
+}
