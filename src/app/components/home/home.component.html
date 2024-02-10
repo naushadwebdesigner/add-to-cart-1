@@ -1,14 +1,41 @@
 <div class="product_wrapper">
+
+    <div class="container" style="display: block; text-align: left;" >
+        <ul style="display: flex;" class="cta_filter">
+            <li (click)="electronic(products)">electronics</li>
+            <li>men</li>
+            <li>women</li>
+            <li>jwlerry</li>
+        </ul>
+    </div>
+
     <div class="container">
+
+       
 
         @for (item of products; track $index) {
 
             <div class="producBox">
-                <div class="imagebox">
-            <img [src]="item.image" alt="" alt="">
+                <div class="imagebox" style="position: relative;">
+                    <div style="position: absolute;">
+
+                        @if(item.category == "electronics") {
+                            <span class="badge badge-warning">{{ item.category }}</span>
+                        }
+                        @if (item.category == "women's clothing") {
+                            <span class="badge badge-info" style="background-color: pink; color: #c60832;">{{ item.category }}</span>
+                        }
+                        
+
+                        
+                       
+                    </div>
+                    
+                    <img [src]="item.image" alt="" alt="">
                 </div>
                 <h2> {{ item.title }} </h2>
                 <h3> {{ item.price | currency }} </h3>
+                
     
                 <div class="count_box">
 
@@ -17,6 +44,12 @@
                     <div class="plus" (click)="incrementQuantity(item)"><i class="fa fa-plus" aria-hidden="true"></i></div>
 
                 </div>
+
+                <p>
+                    {{ item.description | slice: 0:70 }}
+                </p>
+
+                
     
                 <div class="cta">
                     <button (click)="addToCart(item)">Add to Cart</button>

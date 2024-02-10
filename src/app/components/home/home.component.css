@@ -92,3 +92,20 @@ h3 {
 .cta button:hover {
     background-color: chocolate;
 }
+
+.cta_filter {
+    display: flex;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cta_filter  li {
+    padding:5px 10px ;
+    background-color: green;
+    color: #fff;
+    margin-right: 10px;
+    min-width: 100px;
+    text-align: center;
+    cursor: pointer;
+}

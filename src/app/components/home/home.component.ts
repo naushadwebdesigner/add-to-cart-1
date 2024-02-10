@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { Product } from '../../services/modals/product.model';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,9 @@ import { CommonModule } from '@angular/common';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
-  products: any[] = [];
+
+  
+  products: Product[] = [];
 
   constructor(private http: HttpClient) { }
 
@@ -19,7 +22,7 @@ export class HomeComponent {
   }
 
   getData() {
-    this.http.get<any[]>("https://fakestoreapi.com/products")
+    this.http.get<Product[]>("https://fakestoreapi.com/products")
       .subscribe(res => {
         this.products = res.map(product => ({ ...product, quantity: 1 }));
       });
@@ -41,4 +44,15 @@ export class HomeComponent {
   addToCart(product: any) {
     console.log("Added to cart:", product);
   }
+
+
+
+  electronic(products:any) {
+
+
+    
+
+  }
+
+
 }
