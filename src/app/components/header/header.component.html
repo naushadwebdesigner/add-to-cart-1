@@ -1,10 +1,14 @@
-<header>
+<header class="position-fixed" style="width: 100%; z-index: 999;">
     <div class="container">
         <div class="logo_wrap">Cart Option</div>
         <div class="cart_wrap">
             <div routerLink="cart">
                 <i class="fa fa-shopping-cart" ></i>
-                <span class="cart_count">0</span>
+                <span class="cart_count">
+
+                    {{ cartCount }}
+
+                </span>
             </div>
         </div>
     </div>

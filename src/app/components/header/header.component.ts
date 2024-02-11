@@ -1,11 +1,10 @@
-
-import { HttpClient } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { MainService } from '../../services/main.service';
 
 
 
 @Component({
-  selector: 'app-header',
+  selector: 'app-header', 
   standalone: true,
   imports: [],
   templateUrl: './header.component.html',
@@ -13,24 +12,32 @@ import { Component } from '@angular/core';
 })
 export class HeaderComponent { 
 
-  products: any[] = []  ;
+  auth = inject(MainService)
 
-  constructor(private http:HttpClient) {}
+  constructor() {
 
-  ngOnInit() {
-    this.getData()
-  }
-
-  getData() {
-    this.http.get<any[]>("https://fakestoreapi.com/products").
-    subscribe(res => {
-      this.products = res
+    this.auth.cartSubject.subscribe((data) => {
+      this.cartCount = data;
     })
 
   }
 
+  ngOnInit() {
+    this.getCartCount()
+  }
+
+  
+
+cartCount: number = 0;
 
 
+getCartCount() {
+  let getLocalstorage = JSON.parse(localStorage.getItem('localCart') as string)
+  this.cartCount = getLocalstorage.length;
+
+
+
+}
 
 
 }
