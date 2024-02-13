@@ -85,10 +85,10 @@ export class HomeComponent {
     }
 
     this.getCartCount();
-
+    
   
 
-  }
+  } 
 
 
 
@@ -96,16 +96,16 @@ export class HomeComponent {
 
   }
 
-  cartCount: number = 0;
+cartCount: number = 0;
 
 
 getCartCount() {
   let getLocalstorage = JSON.parse(localStorage.getItem('localCart') as string)
   this.cartCount = getLocalstorage.length;
-  this.auth.cartSubject.next(this.cartCount)
-
-  
+  this.auth.cartSubject.next(this.cartCount)  
 }
+
+
 
 
 }

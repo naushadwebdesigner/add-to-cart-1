@@ -17,19 +17,7 @@
 
             <div class="producBox">
                 <div class="imagebox" style="position: relative;">
-                    <div style="position: absolute;">
-
-                        @if(item.category == "electronics") {
-                            <span class="badge badge-warning">{{ item.category }}</span>
-                        }
-                        @if (item.category == "women's clothing") {
-                            <span class="badge badge-info" style="background-color: pink; color: #c60832;">{{ item.category }}</span>
-                        }
-                        
-
-                        
-                       
-                    </div>
+                   
                     
                     <img [src]="item.image" alt="" alt="">
                 </div>
@@ -39,9 +27,11 @@
     
                 <div class="count_box">
 
-                    <div class="minus" (click)="decrementQuantity(item)"><i class="fa fa-minus" aria-hidden="true"></i></div>                    
-                    <div class="qnt"> {{ item.quantity }} </div>                    
-                    <div class="plus" (click)="incrementQuantity(item)"><i class="fa fa-plus" aria-hidden="true"></i></div>
+                    
+                        <div class="minus" (click)="decrementQuantity(item)"><i class="fa fa-minus" aria-hidden="true"></i></div>                    
+                        <div class="qnt"> {{ item.quantity }} </div>                    
+                        <div class="plus" (click)="incrementQuantity(item)"><i class="fa fa-plus" aria-hidden="true"></i></div>
+                    
 
                 </div>
 

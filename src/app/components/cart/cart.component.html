@@ -1,1 +1,43 @@
-<p>cart works!</p>
+
+<div class="product_wrapper" style="padding-top: 100px; height: 1000px;">
+
+    <div class="container">
+
+        @if (cartBull) {
+
+            <table style="width: 100%;">
+                <tr>
+                     <th>Image</th>
+                     <th>Price</th>
+                     <th>Quantity</th>
+                     <th>Sub Total</th>
+                     <th>Remove Item</th>
+                </tr>
+                @for (item of cartProduct; track $index) {
+                 <tr>
+                     <td>
+                         <img [src]="item.image" alt="" style="width: 100px;">
+                     </td>
+                     <td> {{ item.price | currency }} </td>
+                     <td> 
+                         <div style="display: flex;  width: 100%;">
+                             <div class="minus" (click)="decrementQuantity(item)"><i class="fa fa-minus" aria-hidden="true"></i></div>  
+                             <div class="qnt"> {{ item.quantity }} </div>       
+                             <div class="plus" (click)="incrementQuantity(item)"><i class="fa fa-plus" aria-hidden="true"></i></div>
+                         </div>
+                     </td>
+                     <td> {{ item.price | currency }}  </td>
+                     <td><span style="color: red; cursor: pointer;">Delete</span></td>
+                    </tr>
+                }
+             </table>
+
+        }
+       
+
+
+       
+
+    </div>
+
+</div>
